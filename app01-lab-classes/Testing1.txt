@@ -1,13 +1,14 @@
-LabClass co452Lab = new LabClass(3);
-co452Lab.setRoom("G301");
-LabClass labClass1 = new LabClass(3);
-Student student1 = new Student("Gita", "123456");
-Student veena = new Student("Veena", "234567");
-Student gita = new Student("Gita", "12000");
-labClass1.enrollStudent(gita);
-labClass1.printList();
-Lab class unknown
-Instructor: unknown   Room: unknown
+co452Lab.printList();
+Lab class Wednesday, 3:30pm
+Instructor: Nicholas Day   Room: G100
 Class list:
-Gita, student ID: 12000, credits: 0
-Number of students: 1
+Johny Peterson, student ID: 546831, credits: 30, course: Computing
+Peter Johnson, student ID: 685413, credits: 25, course: Computing
+Jeff Kendy, student ID: 321683, credits: 20, course: Computing
+Number of students: 3
+johnPeterson.changeName("John Peterson");
+johnPeterson.print();
+John Peterson, student ID: 546831, credits: 30, course: Computing
+johnPeterson.addCredits(5);
+johnPeterson.print();
+John Peterson, student ID: 546831, credits: 35, course: Computing

@@ -6,8 +6,8 @@ import java.util.*;
  * 
  * @author Michael Kölling and David Barnes
  * @version 2016.02.29
- * modified by Derek Peacock
- * dated 27/Sep/2020
+ * modified by Vytautas Kravcenka
+ * 04/Oct/2020
  */
 public class LabClass
 {

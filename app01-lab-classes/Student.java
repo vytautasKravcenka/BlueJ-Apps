@@ -6,7 +6,8 @@ import java.util.*;
  * 
  * @author Michael Kölling and David Barnes
  * @version 2016.02.29
- * Modified by Derek Peacock (2017650)
+ * Modified by Vytautas Kravcenka
+ * 04/Oct/2020
  */
 public class Student
 {
@@ -90,6 +91,6 @@ public class Student
      */
     public void print()
     {
-        System.out.println(name + ", student ID: " + id + ", credits: " + credits);
+        System.out.println(name + ", student ID: " + id + ", credits: " + credits + ", course: " + course.title);
     }
 }
