@@ -1,0 +1,72 @@
+TicketMachine FirstTicketMachine = new TicketMachine();
+FirstTicketMachine.printTicketList();
+##################
+# The BlueJ Line
+
+Destination: Aylesbury, Price: 2.2£
+
+Destination: Amersham, Price: 3.0£
+
+Destination: High Wycombe, Price: 3.3£
+
+FirstTicketMachine.insertCoins(0.1f);
+Coin entered: 0.1 Current balance: 0.1
+FirstTicketMachine.insertCoins(2);
+Coin entered: 2.0 Current balance: 2.1
+FirstTicketMachine.insertCoins(10);
+I'm sorry the ticket machine only accepts 0.1, 0.2, 1 and 2 coins
+FirstTicketMachine.insertCoins(1);
+Coin entered: 1.0 Current balance: 3.1
+FirstTicketMachine.insertCoins(2);
+Coin entered: 2.0 Current balance: 5.1
+FirstTicketMachine.insertCoins(2);
+Coin entered: 2.0 Current balance: 7.1
+FirstTicketMachine.insertCoins(0.2f);
+Coin entered: 0.2 Current balance: 7.3
+FirstTicketMachine.chooseTicketToBuy();
+Type: 
+1 for Aylesbury
+2 for Amersham
+3 for High Wycombe
+2
+Ticket selected: 
+Destination: Amersham, Price: 3.0£
+Ticket purchased
+Balance left: 4.3
+refund excess money by clicking refundBalance
+FirstTicketMachine.chooseTicketToBuy();
+Type: 
+1 for Aylesbury
+2 for Amersham
+3 for High Wycombe
+1
+Ticket selected: 
+Destination: Aylesbury, Price: 2.2£
+Ticket purchased
+Balance left: 2.1
+refund excess money by clicking refundBalance
+FirstTicketMachine.chooseTicketToBuy();
+Type: 
+1 for Aylesbury
+2 for Amersham
+3 for High Wycombe
+3
+Ticket selected: 
+Destination: High Wycombe, Price: 3.3£
+too little balance to buy the ticket
+add more coins or click refundBalance
+FirstTicketMachine.insertCoins(2);
+Coin entered: 2.0 Current balance: 4.1
+FirstTicketMachine.chooseTicketToBuy();
+Type: 
+1 for Aylesbury
+2 for Amersham
+3 for High Wycombe
+3
+Ticket selected: 
+Destination: High Wycombe, Price: 3.3£
+Ticket purchased
+Balance left: 0.8
+refund excess money by clicking refundBalance
+FirstTicketMachine.refundBalance();
+refunded: 0.8
