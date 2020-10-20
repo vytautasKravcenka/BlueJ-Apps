@@ -11,7 +11,8 @@ import java.util.Scanner;
  * @author David J. Barnes and Michael Kölling
  * @version 2016.02.29
  * 
- * Modified by Student Name
+ * Modified by Vytautas Kravcenka
+ * 2020.10.20
  */
 public class TicketMachine
 {
