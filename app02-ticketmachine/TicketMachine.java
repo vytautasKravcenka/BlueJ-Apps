@@ -52,19 +52,9 @@ public class TicketMachine
      * Receive an amount of money from a customer.
      * Check that the amount is sensible.
      */
-    public void insertCoins(float amount)
+    public void insertCoins(Coin amount)
     {
-        if(amount == 0.1f || amount == 0.2f || amount == 1 || amount == 2) 
-        {
-            balance += amount;
-            System.out.println("Coin entered: " + amount 
-            + " Current balance: " + balance);
-        }
-        else 
-        {
-            System.out.println(
-            "I'm sorry the ticket machine only accepts 0.1, 0.2, 1 and 2 coins");
-        }
+        amount.getValue();
     }
 
     /**
@@ -152,4 +142,24 @@ public class TicketMachine
         System.out.println("refunded: " + balance);
         balance = 0;
     }
+    
+    public enum Coin
+    {
+        P10 (10),
+        P20 (20),
+        P100 (100),
+        P200 (200);
+
+        private final int value;
+
+        private Coin(int value)
+        {
+            this.value = value;
+        }
+
+        public int getValue()
+        {
+            return value;
+        }
+     }
 }

@@ -1,0 +1,22 @@
+Student Vytautas = new Student("Vytautas Kravcenka", "22012680");
+Course course1 = new Course("Computing", "G400");
+Vytautas.setCourse();
+Module newModule = new Module("new module", "new number");
+newModule.setMark(75);
+course1.addModules();
+course1.print();
+Course name: Computing course number: G400
+Modules:
+Module title: Programming Concepts module code: CO452 percentage mark: 70%
+Module title: Game Design module code: CO460 percentage mark: 75%
+Module title: Computer Architectures module code: CO450 percentage mark: 80%
+Module title: 3d Modelling module code: CO461 percentage mark: 60%
+newModule.print();
+Module title: new module module code: new number percentage mark: 75%
+Vytautas.countGrade();
+Vytautas.print();
+Final grade: A
+Programming Concepts mark: 70%
+Game Design mark: 75%
+Computer Architectures mark: 80%
+3d Modelling mark: 60%
