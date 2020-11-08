@@ -23,6 +23,7 @@ public class Student
         name = fullName;
         id = studentID;
     }
+
     /**
      *  enrolls a student on a course
      */
@@ -30,6 +31,7 @@ public class Student
     {
         this.course = new Course ("Computing", "G400");
     }
+
     /**
      * calculates a final grade for a course consisting of 4 modules
      */
@@ -37,6 +39,7 @@ public class Student
     {
         course.calculateFinalGrade();
     }
+
     /**
      * Prints out the final grade and the marks for the modules for a student
      */

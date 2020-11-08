@@ -1,0 +1,133 @@
+StockManager m = new StockManager();
+StockDemo stockDem1 = new StockDemo(m);
+stockDem1.runDemo();
+
+Printing Jeff's Stock List
+=================
+
+101: Samsung Galaxy S20 quantity: 0
+102: Apple iPhone 12 quantity: 0
+103: Google Pixel 1A quantity: 0
+104: Samsung Galaxy S10 quantity: 0
+105: Apple iPhone 10 quantity: 0
+106: Google Pixel 2B quantity: 0
+107: Samsung Galaxy S8 quantity: 0
+108: Apple iPhone 8 quantity: 0
+109: Google Pixel 3C quantity: 0
+110: Samsung Galaxy S7 quantity: 0
+111: Apple iPhone 6 quantity: 0
+112: Google Pixel 4D quantity: 0
+No of Products in Stock = 12
+
+Delivering all the products
+
+
+Printing Jeff's Stock List
+=================
+
+101: Samsung Galaxy S20 quantity: 5
+102: Apple iPhone 12 quantity: 2
+103: Google Pixel 1A quantity: 7
+104: Samsung Galaxy S10 quantity: 6
+105: Apple iPhone 10 quantity: 1
+106: Google Pixel 2B quantity: 2
+107: Samsung Galaxy S8 quantity: 1
+108: Apple iPhone 8 quantity: 6
+109: Google Pixel 3C quantity: 5
+110: Samsung Galaxy S7 quantity: 3
+111: Apple iPhone 6 quantity: 7
+112: Google Pixel 4D quantity: 5
+
+Selling the products
+
+
+Selling 1 of Samsung Galaxy S20
+
+Sold 1 of Samsung Galaxy S20. Final quantity in stock: 4
+
+Selling 2 of Apple iPhone 12
+
+Sold 2 of Apple iPhone 12. Final quantity in stock: 0
+
+Selling 1 of Google Pixel 1A
+
+Sold 1 of Google Pixel 1A. Final quantity in stock: 6
+
+Selling 2 of Samsung Galaxy S10
+
+Sold 2 of Samsung Galaxy S10. Final quantity in stock: 4
+
+Failed to sell 2 of Apple iPhone 10
+
+Selling 1 of Apple iPhone 10
+
+Lacking 2 copies of Apple iPhone 10
+
+Selling 0 of Google Pixel 2B
+
+Sold 0 of Google Pixel 2B. Final quantity in stock: 2
+
+Failed to sell 2 of Samsung Galaxy S8
+
+Selling 1 of Samsung Galaxy S8
+
+Lacking 2 copies of Samsung Galaxy S8
+
+Selling 0 of Apple iPhone 8
+
+Sold 0 of Apple iPhone 8. Final quantity in stock: 6
+
+Selling 1 of Google Pixel 3C
+
+Sold 1 of Google Pixel 3C. Final quantity in stock: 4
+
+Selling 2 of Samsung Galaxy S7
+
+Sold 2 of Samsung Galaxy S7. Final quantity in stock: 1
+
+Selling 2 of Apple iPhone 6
+
+Sold 2 of Apple iPhone 6. Final quantity in stock: 5
+
+Selling 1 of Google Pixel 4D
+
+Sold 1 of Google Pixel 4D. Final quantity in stock: 4
+
+Printing Jeff's Stock List
+=================
+
+101: Samsung Galaxy S20 quantity: 4
+102: Apple iPhone 12 quantity: 0
+103: Google Pixel 1A quantity: 6
+104: Samsung Galaxy S10 quantity: 4
+105: Apple iPhone 10 quantity: 0
+106: Google Pixel 2B quantity: 2
+107: Samsung Galaxy S8 quantity: 0
+108: Apple iPhone 8 quantity: 6
+109: Google Pixel 3C quantity: 4
+110: Samsung Galaxy S7 quantity: 1
+111: Apple iPhone 6 quantity: 5
+112: Google Pixel 4D quantity: 4
+
+Printing searched products:
+
+Search word: Samsung
+
+101: Samsung Galaxy S20 quantity: 4
+107: Samsung Galaxy S8 quantity: 0
+110: Samsung Galaxy S7 quantity: 1
+
+Printing searched products:
+
+Search word: Huawei
+
+No products match the search
+
+
+Printing low stock products:
+
+102: Apple iPhone 12 quantity: 0
+105: Apple iPhone 10 quantity: 0
+106: Google Pixel 2B quantity: 2
+107: Samsung Galaxy S8 quantity: 0
+110: Samsung Galaxy S7 quantity: 1

@@ -1,91 +1,129 @@
+import java.util.Random;
 /**
- * Demonstrate the StockManager and Product classes.
- * The demonstration becomes properly functional as
- * the StockManager class is completed.
+ * Runs a fast test using Product and StockManager classes.
  * 
- * @author David J. Barnes and Michael Kölling.
- * @version 2016.02.29
+ * @author Vytautas Kravcenka.
+ * 11/08/2020
  */
 public class StockDemo
 {
     // The stock manager.
     private StockManager manager;
+    private Random generator = new Random();
+    private int amount = 0;    
+    /**
+     * Create a StockManager and populate it with a 12
+     * sample products for test.
+     */
+    public StockDemo(StockManager manager)
+    {
+        this.manager = manager;
+
+        manager.addProduct(new Product(101, "Samsung Galaxy S20"));
+        manager.addProduct(new Product(102, "Apple iPhone 12"));
+        manager.addProduct(new Product(103, "Google Pixel 1A"));
+        manager.addProduct(new Product(104, "Samsung Galaxy S10"));
+        manager.addProduct(new Product(105, "Apple iPhone 10"));
+        manager.addProduct(new Product(106, "Google Pixel 2B"));
+        manager.addProduct(new Product(107, "Samsung Galaxy S8"));
+        manager.addProduct(new Product(108, "Apple iPhone 8"));
+        manager.addProduct(new Product(109, "Google Pixel 3C"));
+        manager.addProduct(new Product(110, "Samsung Galaxy S7"));
+        manager.addProduct(new Product(111, "Apple iPhone 6"));
+        manager.addProduct(new Product(112, "Google Pixel 4D"));
+    }
 
     /**
-     * Create a StockManager and populate it with a few
-     * sample products.
-     */
-    public StockDemo()
-    {
-        manager = new StockManager();
-        manager.addProduct(new Product(132, "Clock Radio"));
-        manager.addProduct(new Product(37,  "Mobile Phone"));
-        manager.addProduct(new Product(23,  "Microwave Oven"));
-    }
-    
-    /**
      * Provide a very simple demonstration of how a StockManager
-     * might be used. Details of one product are shown, the
-     * product is restocked, and then the details are shown again.
+     * might be used. 
+     * Accepts delivery various quantities of existing products
+     * Sells quantities of products from stock
+     * Renames a product from the stock list based on ID
+     * Removes a product from the stock list based on ID
+     * Prints a list of all products and their stock levels
+     * Prints a list of products based on part of the product name
+     * Print a list of products whose stock levels are low (3 and less)
      */
-    public void demo()
+    public void runDemo()
     {
-        // Show details of all of the products.
+
         manager.printProductDetails();
-        // Take delivery of 5 items of one of the products.
-        manager.delivery(132, 5);
-        manager.printProductDetails();
+
+        int noProducts = manager.numberOfProducts();
+
+        System.out.println("No of Products in Stock = " + noProducts);
+
+        demoDeliverProducts();
+
+        demoSellProducts();
+
+        demoRenameProducts();
+
+        demoRemoveProducts();
+
+        demoProductsWithName();
+
+        manager.printLowStockProducts();
     }
-    
-    /**
-     * Show details of the given product. If found,
-     * its name and stock quantity will be shown.
-     * @param id The ID of the product to look for.
+
+    /** 
+     * Accepts delivery various quantities of existing products
      */
-    public void showDetails(int id)
+    private void demoDeliverProducts()
     {
-        Product product = getProduct(id);
-        
-        if(product != null) 
+        System.out.println("\nDelivering all the products\n");
+
+        for(int id = 101; id <= 112; id++)
         {
-            System.out.println(product.toString());
+            amount = generator.nextInt(8);
+            manager.delivery(id, amount); 
         }
+
+        manager.printProductDetails();        
     }
-    
+
     /**
-     * Sell one of the given item.
-     * Show the before and after status of the product.
-     * @param id The ID of the product being sold.
+     * Sells quantities of products from stock
      */
-    public void sellProduct(int id)
+    private void demoSellProducts()
     {
-        Product product = getProduct(id);
-        
-        if(product != null) 
+        System.out.println("\nSelling the products\n");
+
+        for(int id = 101; id <= 112; id++)
         {
-            showDetails(id);
-            product.sellOne();
-            showDetails(id);
+            amount = generator.nextInt(4);
+            manager.sellProduct(id, amount); 
         }
+
+        manager.printProductDetails();      
     }
-    
+
     /**
-     * Get the product with the given id from the manager.
-     * An error message is printed if there is no match.
-     * @param id The ID of the product.
-     * @return The Product, or null if no matching one is found.
+     * Renames a product from the stock list based on ID
      */
-    public Product getProduct(int id)
+    private void demoRenameProducts()
     {
-        Product product = manager.findProduct(id);
-        
-        if(product == null) 
-        {
-            System.out.println("Product with ID: " + id +
-                               " is not recognised.");
-        }
-        return product;
+        int randomNumber = generator.nextInt(116-98+1) + 100;
+        manager.renameProduct(randomNumber, "changed name");
     }
+
+    /**
+     * Removes a product from the stock list based on ID
+     */
+    private void demoRemoveProducts()
+    {
+        int randomNumber = generator.nextInt(116-98+1) + 100;
+        manager.removeProduct(randomNumber);
+    }
+
+    /**
+     * Prints a list of products based on part of the product name
+     */
+    private void demoProductsWithName()
+    {
+        manager.printProductsWithName("Samsung");
+        manager.printProductsWithName("Huawei");
+    }   
 
     /**
      * @return The stock manager.

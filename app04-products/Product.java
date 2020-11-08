@@ -1,8 +1,9 @@
 /**
- * Model some details of a product sold by a company.
+ * Holds simple information about product
  * 
  * @author David J. Barnes and Michael Kölling.
- * @version 2016.02.29
+ * @edited by Vytautas Kravcenka
+ * 11/08/2020
  */
 public class Product
 {
@@ -43,6 +44,14 @@ public class Product
     }
 
     /**
+     * @set The product's name.
+     */
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+
+    /**
      * @return The quantity in stock.
      */
     public int getQuantity()
@@ -55,7 +64,7 @@ public class Product
      */
     public String toString()
     {
-        return id + ": " +  name + " stock level: " + quantity;
+        return id + ": " +  name + " quantity: " + quantity;
     }
 
     /**
@@ -64,7 +73,7 @@ public class Product
      * @param amount The number of new items added to the stock.
      *               This must be greater than zero.
      */
-    public void increaseQuantity(int amount)
+    public void deliver(int amount)
     {
         if(amount > 0) 
         {
@@ -73,7 +82,7 @@ public class Product
         else 
         {
             System.out.println("Attempt to restock " + name +
-                               " with a non-positive amount: " + amount);
+                " with a non-positive amount: " + amount);
         }
     }
 
@@ -81,16 +90,22 @@ public class Product
      * Sell one of these products.
      * An error is reported if there appears to be no stock.
      */
-    public void sellOne()
+    public void sell(int quantityOrdered)
     {
-        if(quantity > 0) 
+        if(quantity >= quantityOrdered) 
         {
-            quantity--;
+            System.out.println("\nSelling " + quantityOrdered + " of " + name);
+            quantity-= quantityOrdered;
+            System.out.println("\nSold " + quantityOrdered + " of " + name 
+                + ". Final quantity in stock: " + quantity);
         }
         else 
         {
-            System.out.println(
-                "Attempt to sell an out of stock item: " + name);
+            System.out.println("\nFailed to sell " + quantityOrdered + " of " + name);
+            System.out.println("\nSelling " + quantity + " of " + name);
+            quantity = 0;
+            quantityOrdered -= quantity;
+            System.out.println("\nLacking " + quantityOrdered + " copies of " + name);
         }
     }
 }

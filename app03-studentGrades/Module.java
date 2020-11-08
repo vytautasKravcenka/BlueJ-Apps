@@ -27,6 +27,7 @@ public class Module
         codeNo = codeNumber;
         completed = false;
     }
+
     /**
      * Awards a percentage mark to a module
      */
@@ -34,9 +35,10 @@ public class Module
     {
         if(mark >=0 && mark<= 100)
         {this.mark = mark;
-        if (mark >= 40) completed = true;
+            if (mark >= 40) completed = true;
+        }
     }
-    }
+
     /**
      * Simple get mark 
      */
@@ -44,6 +46,7 @@ public class Module
     {
         return mark;
     }
+
     /**
      * Returns whether or not the module is complete
      */
@@ -51,6 +54,7 @@ public class Module
     {
         return completed;
     }
+
     /**
      * Prints module details
      */
@@ -59,6 +63,7 @@ public class Module
         System.out.println("Module title: " + title + ", module code: " +  codeNo +
             ", percentage mark: " + mark + "%");
     }
+
     /**
      * Prints module mark
      */
