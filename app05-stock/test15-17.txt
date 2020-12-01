@@ -1,0 +1,107 @@
+******************************
+ Stock Management Application 
+    App05: by Vytautas
+******************************
+
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Delivery:   Delivery of a product
+    Sell:       Sell a product
+    Search:     Search for a product
+    ReStock:    Restock low stock products
+    PrintAll:   Print all products
+    PrintLow:   Print all products of low stock
+    Quit:       Quit the program
+
+Type your choise
+> sell
+
+Selling a product
+Enter a product ID
+> 112
+How many items to sell?
+> -2
+
+Failed to sell -2 of Samsung Galaxy S20
+
+Negative amount or 0!
+
+******************************
+ Stock Management Application 
+    App05: by Vytautas
+******************************
+
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Delivery:   Delivery of a product
+    Sell:       Sell a product
+    Search:     Search for a product
+    ReStock:    Restock low stock products
+    PrintAll:   Print all products
+    PrintLow:   Print all products of low stock
+    Quit:       Quit the program
+
+Type your choise
+> search
+
+Search for a product
+Enter part of a product name
+> Samsung
+
+Printing searched products:
+
+Search word: Samsung
+
+111: Samsung Galaxy S10 quantity: 0
+112: Samsung Galaxy S20 quantity: 0
+
+******************************
+ Stock Management Application 
+    App05: by Vytautas
+******************************
+
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Delivery:   Delivery of a product
+    Sell:       Sell a product
+    Search:     Search for a product
+    ReStock:    Restock low stock products
+    PrintAll:   Print all products
+    PrintLow:   Print all products of low stock
+    Quit:       Quit the program
+
+Type your choise
+> printlow
+
+Printing low stock products
+Enter amount for low stock
+> 2
+
+Printing low stock products:
+
+111: Samsung Galaxy S10 quantity: 0
+112: Samsung Galaxy S20 quantity: 0
+114: Apple iPhone 12 quantity: 0
+115: Motorola G9 Plus quantity: 0
+
+******************************
+ Stock Management Application 
+    App05: by Vytautas
+******************************
+
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Delivery:   Delivery of a product
+    Sell:       Sell a product
+    Search:     Search for a product
+    ReStock:    Restock low stock products
+    PrintAll:   Print all products
+    PrintLow:   Print all products of low stock
+    Quit:       Quit the program
+
+Type your choise
+> quit

@@ -14,6 +14,7 @@ import java.util.ArrayList;
  * 
  * @author Vytautas Kravcenka
  * 11/08/2020
+ * edited 24/11/2020
  */
 public class StockManager
 {
@@ -38,12 +39,12 @@ public class StockManager
     //check this
     public void removeProduct(int id)
     {
-        stock.remove(getProduct(id));
+        stock.remove(findProduct(id));
     }
 
     public void renameProduct(int id, String name)
     {
-        getProduct(id).setName(name);
+        findProduct(id).setName(name);
     }
 
     /**
@@ -52,28 +53,12 @@ public class StockManager
      */
     public void showDetails(int id)
     {
-        Product product = getProduct(id);
+        Product product = findProduct(id);
 
         if(product != null) 
         {
             System.out.println(product.toString());
         }
-    }
-
-    /**
-     * Get the product with the given id from the manager.
-     * An error message is printed if there is no match.
-     */
-    public Product getProduct(int id)
-    {
-        Product product = findProduct(id);
-
-        if(product == null) 
-        {
-            System.out.println("Product with ID: " + id +
-                " is not recognised.");
-        }
-        return product;
     }
 
     /**
@@ -108,6 +93,19 @@ public class StockManager
         }
     }
 
+    public void reStock(int lowStock,int amount)
+    {
+        for(Product product : stock)
+        {
+            if(product.getQuantity() <= lowStock)
+            {
+                product.addQuantity(amount);
+                System.out.println("\nRe-stocked " + product.getName() 
+                + ". Final quantity in stock: " + product.getQuantity());
+            }   
+        }
+    }
+
     /**
      * Try to find a product in the stock with the given id.
      */
@@ -118,6 +116,22 @@ public class StockManager
             if(product.getID() == id) return product;
         }
         return null;
+    }
+
+    public boolean isDuplicate(int id)
+    {
+        Product product = findProduct(id);
+
+        if(product == null)
+            return false;
+        else
+            return true;
+    }
+
+    public boolean blankName(String name)
+    {
+        if(name.isEmpty()) return true;
+        else return false;
     }
 
     public int numberOfProducts()
@@ -171,20 +185,20 @@ public class StockManager
     /**
      * Print details of all the products with stock of 3 an less.
      */
-    public void printLowStockProducts()
+    public void printLowStockProducts(int amount)
     {
         System.out.println("\nPrinting low stock products:\n");
         boolean printedAtleastOneName = false;
-        
+
         for(Product product : stock)
         {
-            if(product.getQuantity() <= 3)
+            if(product.getQuantity() <= amount)
             {
                 System.out.println(product);
                 printedAtleastOneName = true;
             }
         }
-        
+
         if (!printedAtleastOneName)
             System.out.println("\nNo products with low stock level\n");
     }
